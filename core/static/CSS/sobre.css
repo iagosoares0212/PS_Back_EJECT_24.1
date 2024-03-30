@@ -1,0 +1,82 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+}
+
+#secoes-lado-a-lado {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.secao-lado-a-lado {
+    display: flex;
+    gap: 40px;
+}
+
+.secao-lado-a-lado img {
+    max-width: 655px;
+}
+
+.secao-lado-a-lado div {
+    max-width: 536px;
+}
+
+.secao-lado-a-lado h1 {
+    font-family: DM Sans;
+    font-size: 48px;
+    line-height: 62.5px;
+    height: 58px;
+    width: 334px;
+}
+
+.secao-lado-a-lado h1 span {
+    font-family: DM Sans;
+    font-size: 48px;
+    line-height: 62.5px;
+    height: 58px;
+    width: 334px;
+    text-decoration: underline; 
+    text-decoration-color: #F97B22;
+}
+
+.secao-lado-a-lado p {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+#secao-melhores-professores {
+    height: 580px;
+    background-color: black;
+    border-radius: 35px;
+    padding-top: 110px;
+    padding-left: 84px;
+    color: white;
+
+    background-image: url('../IMG/Rectangle 604.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#secao-melhores-professores div {
+    max-width: 750px; 
+}
+
+#secao-melhores-professores div h1 {
+    font-family: DM Sans;
+    weight: 700;
+    font-size: 64px;
+    line-height: 80px;
+
+}
+
+
+#secao-melhores-professores div h1 span {
+    font-family: DM Sans;
+    weight: 700;
+    font-size: 64px;
+    line-height: 80px;
+    text-decoration: underline; 
+    text-decoration-color: #F97B22;
+}
