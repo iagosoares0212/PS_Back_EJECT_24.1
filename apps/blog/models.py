@@ -8,8 +8,8 @@ class Post(models.Model):
     autor = models.CharField(max_length=50)
     data_publicação = models.DateTimeField(auto_now_add=True)
     texto = models.TextField()
-    foto_capa = models.ImageField(upload_to='media')
-    foto_texto = models.ImageField(upload_to='media')
+    foto_capa = models.ImageField(upload_to='IMG')
+    foto_texto = models.ImageField(upload_to='IMG')
 
     def __str__(self):
         return self.titulo

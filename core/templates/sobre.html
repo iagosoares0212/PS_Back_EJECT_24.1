@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <link rel="stylesheet" href="../CSS/navbar.css">
-    <link rel="stylesheet" href="../CSS/sobre.css">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/sobre.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
    <div id="wrapper">
     <header class="navbar">
         <div class="navbar-esquerda">
-            <a href="" class="logo-mani-cursos"><img src="../IMG/mani logo.png" alt="botão-logo-mani-cursos"></a>
-            <img class="linha-divisoria" src="../IMG/Line 2.svg" alt="linha-divisoria">
+            <a href="" class="logo-mani-cursos"><img src="{% static 'IMG/mani logo.png' %}" alt="botão-logo-mani-cursos"></a>
+            <img class="linha-divisoria" src="{% static 'IMG/Line 2.svg' %}" alt="linha-divisoria">
         </div>
         <div class="navbar-direita">
             <div class="ancoras-navbar">
@@ -34,7 +34,7 @@
     <main>
         <section id="secoes-lado-a-lado">
             <section class="secao-lado-a-lado">
-                <img src="../IMG/Rectangle 19.png" alt="pessoas a mesa">
+                <img src="{% static 'IMG/Rectangle 19.png' %}" alt="pessoas a mesa">
 
                 <div>
                     <h1>Nossa <span>História</span></h1>    
@@ -48,7 +48,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
                 </div>
 
-                <img src="../IMG/foto 01.png" alt="reunião de pessoas">
+                <img src="{% static 'IMG/foto 01.png' %}" alt="reunião de pessoas">
             </section>
         </section>
 
@@ -58,7 +58,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer.</p>
                 <button>
                     <span>nossa equipe</span>
-                    <img src="../IMG/Right arrow.png " alt="seta para direita">
+                    <img src="{% static 'IMG/Right arrow.png " alt="seta para direita">
                 </button>
             </div>
         </section>
