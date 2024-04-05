@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.fotos_esquerda {
+    background: url(../IMG/fotos\ esquerda.svg) no-repeat;
+    position: absolute;
+    width: 530px;
+    height: 1000px;
+    right: 0.5px;
+    top: 1px;
+}

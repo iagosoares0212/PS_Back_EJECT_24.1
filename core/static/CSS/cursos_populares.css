@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cursos_pop {
+    position: absolute;
+    top: 1068px;
+    margin: 5.2%;
+    border: 1px solid red;
+}
+h2 {
+    font-family: DM sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 41px;
+}

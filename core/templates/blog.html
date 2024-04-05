@@ -15,24 +15,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    
-    <div id="wrapper">
-        <header class="navbar">
-            <div class="navbar-esquerda">
-                <a href="" class="logo-mani-cursos"><img src="{% static 'IMG/mani logo.png' %}" alt="botão-logo-mani-cursos"></a>
-                <img class="linha-divisoria" src="{% static 'IMG/Line 2.svg' %}" alt="linha-divisoria">
-            </div>
-            <div class="navbar-direita">
-                <div class="ancoras-navbar">
-                    <a href="" class="ancora-navbar">HOME</a>
-                    <a href="" class="ancora-navbar">SOBRE</a>
-                    <a href="" class="ancora-navbar">CURSOS</a>
-                    <a href="" class="ancora-navbar">BLOG</a>
-                    <a href="" class="ancora-navbar">CONTATO</a>
-                </div>
+    <div class="container"> <!--INICIO CONTAINER-->
+        <header><!--INICIO do header-->
+            <div class="img_logo">
+            <a href="../" class="logo-mani-cursos"><img src="{% static 'IMG/mani logopsd cópia 2.png' %}" alt="botão-logo-mani-cursos"></a>
+            <img class="linha-divisoria" src="{% static 'IMG/Line 2.svg' %}" alt="linha-divisoria">
+            <div class="menu_barra">
+                    <div class="hamburger">
+                        <div class="barra1"></div>
+                        <div class="barra2"></div>
+                        <div class="barra3"></div>
+                    </div>
+                    
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'home:index' %}">HOME</a></li>
+                            <li><a href="sobre">SOBRE</a></li>
+                            <li><a href="cursos">CURSOS</a></li>
+                            <li><a href="{% url 'blog:blog' %}">BLOG</a></li>
+                            <li><a href="contato">CONTATO</a></li>
+                        </ul>
+                    </nav>
+                
             </div>
         </header>
+    </div><!--FIM do header-->
+    <script src="{% static 'JAVASCRIPT/navbar.js' %}">
+
+    </script>
+    
+    
         <main>
             <div class="last-news">
                 <h1>Últimas notícias</h1>
@@ -40,83 +52,42 @@
                     iusto aut accusamus voluptatem.</p>
             </div> 
             <div class="search-bar">
-                <input type="text" placeholder="Buscar curso"/>
-                <img src="{% static 'IMG/lupa.svg' %}" alt="imagem-lupa"/>
+                <form method="GET" action="{% url 'blog:blogsearch' %}">
+                    <input type="text" placeholder="Buscar" id="search" name="q"/>
+                    <img src="{% static 'IMG/lupa.svg' %}" alt="imagem-lupa"/>
+                </form>
             </div>
             <div class="course-area">
-                <div class="course">
+                {% for post in posts %}
+                <div class="course" id="{{forloop.counter}}">
                     <a class="link-area" href="">
-                        <img class="course-img" src="{% static 'IMG/image1.png' %}" alt="course-image"/>
-                        <h3>Transforme sua Carreira: Descubra os Cursos Online Mais Procurados do...</h3>
-                        <p>Lorem ipsum dolor sit amet. Et voluptatem consectetur ad repudiandae autem et magni officiis aut facere tempore nam eligendi quod ut voluptatem iure ut voluptas eveniet.’</p>
-                        <div class="date-more">
-                            <span><img src="{% static 'IMG/heart.svg' %}"/>10 de Outubro de 2023</span>
+                        <a class="link-area" href="{% url 'blog:post' post.id %}">
+                            <img class="course-img" src="{{ post.foto_capa.url }}" alt="course-image"/>
+                            <h3>{{post.titulo}}</h3>
+                            <p>{{post.subtitulo}}</p>
+                            <span><img class="heart-img" src="{% static 'IMG/heart.svg' %}"/>{{ post.data_publicacao }}</span>
                             <a class="read-more" href="">LEIA MAIS</a>
-                        </div>
+                        </a>
                     </a>
                 </div>
-                <div class="course">
-                    <a class="link-area" href="">
-                        <img class="course-img" src="{% static 'IMG/image2.png' %}" alt="course-image"/>
-                        <h3>Transforme sua Carreira: Descubra os Cursos Online Mais Procurados do...</h3>
-                        <p>Lorem ipsum dolor sit amet. Et voluptatem consectetur ad repudiandae autem et magni officiis aut facere tempore nam eligendi quod ut voluptatem iure ut voluptas eveniet.’</p>
-                        <div class="date-more">
-                            <span><img src="{% static 'IMG/heart.svg' %}"/>10 de Outubro de 2023</span>
-                            <a class="read-more" href="">LEIA MAIS</a>
-                        </div>
-                    </a>
-                </div>
-                <div class="course">
-                    <a class="link-area" href="">
-                        <img class="course-img" src="{% static 'IMG/image3.png' %}" alt="course-image"/>
-                        <h3>Transforme sua Carreira: Descubra os Cursos Online Mais Procurados do...</h3>
-                        <p>Lorem ipsum dolor sit amet. Et voluptatem consectetur ad repudiandae autem et magni officiis aut facere tempore nam eligendi quod ut voluptatem iure ut voluptas eveniet.’</p>
-                        <div class="date-more">
-                            <span><img src="{% static 'IMG/heart.svg' %}"/>10 de Outubro de 2023</span>
-                            <a class="read-more" href="">LEIA MAIS</a>
-                        </div>
-                    </a>
-                </div>
-                <div class="course">
-                    <a class="link-area" href="">
-                        <img class="course-img" src="{% static 'IMG/image4.png' %}" alt="course-image"/>
-                        <h3>Transforme sua Carreira: Descubra os Cursos Online Mais Procurados do...</h3>
-                        <p>Lorem ipsum dolor sit amet. Et voluptatem consectetur ad repudiandae autem et magni officiis aut facere tempore nam eligendi quod ut voluptatem iure ut voluptas eveniet.’</p>
-                        <div class="date-more">
-                            <span><img src="{% static 'IMG/heart.svg' %}"/>10 de Outubro de 2023</span>
-                            <a class="read-more" href="">LEIA MAIS</a>
-                        </div>
-                    </a>
-                </div>
-                <div class="course">
-                    <a class="link-area" href="">
-                        <img class="course-img" src="{% static 'IMG/image5.png' %}" alt="course-image"/>
-                        <h3>Transforme sua Carreira: Descubra os Cursos Online Mais Procurados do...</h3>
-                        <p>Lorem ipsum dolor sit amet. Et voluptatem consectetur ad repudiandae autem et magni officiis aut facere tempore nam eligendi quod ut voluptatem iure ut voluptas eveniet.’</p>
-                        <div class="date-more">
-                            <span><img src="{% static 'IMG/heart.svg' %}"/>10 de Outubro de 2023</span>
-                            <a class="read-more" href="">LEIA MAIS</a>
-                        </div>
-                    </a>
-                </div>
-                <div class="course">
-                    <a class="link-area" href="">
-                        <img class="course-img" src="{% static 'IMG/image6.png' %}" alt="course-image"/>
-                        <h3>Transforme sua Carreira: Descubra os Cursos Online Mais Procurados do...</h3>
-                        <p>Lorem ipsum dolor sit amet. Et voluptatem consectetur ad repudiandae autem et magni officiis aut facere tempore nam eligendi quod ut voluptatem iure ut voluptas eveniet.’</p>
-                        <div class="date-more">
-                            <span><img class="heart-img" src="{% static 'IMG/heart.svg' %}"/>10 de Outubro de 2023</span>
-                            <a class="read-more" href="">LEIA MAIS</a>
-                        </div>
-                    </a>
-                </div>   
+                {% endfor %}
             </div>
-            <a class="search-more" href="">Carregar mais</a>
+            {% if search != '' %}
+            <a class="search-more" href="{% url 'blog:blogsearchmais' num_posts %}?q={{search}}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
+            {% else %}
+            <a class="search-more" href="{% url 'blog:blogcarregarmais' num_posts %}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
+            {% endif %}
+        
+                <!-- 
+            <script>
+                document.getElementById("carregar-mais").setAttribute("href", "../blog/carregar-mais/"+counter+"#"+counter);
+            </script>
+        -->
         </main>
-    </div>
+    
     <footer>
         <div class="footer-area">
-            <img class="footer-logo" src="{% static 'IMG/mani logo.png' %}" alt="logo-footer"/>
+            <img class="footer-logo" src="../IMG/mani logopsd cópia 2 (1).png" alt="logo-footer"/>
             <div class="information-area">
                 <div class="contact-area">
                     <h6>Entre em contato</h6>

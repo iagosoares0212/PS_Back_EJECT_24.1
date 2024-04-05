@@ -1,3 +1,4 @@
 #ignore db.sqlite3 and media folder
 db.sqlite3
-media
+media/
+todo.txt

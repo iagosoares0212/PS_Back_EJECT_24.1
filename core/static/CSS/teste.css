@@ -1,0 +1,180 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #FFF ;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  height: 100px;
+  width: 70%;
+  margin-left: 5.2%;
+
+}
+.img_logo {
+  width: 100%;
+  margin-top: 25px;
+
+}
+.linha_topo {
+  margin: 0 12px;
+}
+a:link,
+a:visited,
+a:active {
+  color: #5D5E59;
+  font-weight: 400;
+}
+a:hover {
+  color: #FFCDAC;
+  background: #FF7000;
+  padding: 2px;
+}
+nav ul {
+  position: absolute;
+  top: 0.5%;
+  left: 19%;
+  float: right;
+  list-style: none;
+}
+nav ul li{
+  float: left;
+}
+nav ul li a:link{
+  display: block;
+  margin: 35px 10px 1px 15px;
+  line-height: 19.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+}
+.clicar {
+  cursor: pointer;
+}
+
+@media (max-width: 1100px){
+  nav ul {
+    position: absolute;
+    top: 0.5%;
+    left: 19%;
+    padding-left:2% ;
+    float: right;
+    list-style: none;
+  }
+}
+
+@media (max-width:930px) {
+  nav ul {
+    position: absolute;
+    top: 0.5%;
+    left: 19%;
+    padding-left:5% ;
+    float: right;
+    list-style: none;
+  }
+}
+
+@media (max-width: 850px) {
+  body {
+      background: #FFF;
+    
+      
+  }
+  header {
+      display: flex;
+      height: 100px;
+      width: 100%;
+  }
+  nav {
+      display: none;
+  }
+  .linha_topo {
+      display: none;
+      }
+  .barra1,
+  .barra2,
+  .barra3 {
+      background-color: black;
+      height: 5px;
+      width: 100%;
+      margin: 6px auto;
+
+      transition-duration: 0.3s;
+  }
+
+  .hamburger {
+      width: 40px;
+      height: 30px;
+      margin-right: 20px;
+  }
+  .menu_barra.ativo {
+      position: absolute;
+      top:0;
+      left:0;
+      
+
+
+      background-color: #FF7000;
+      
+      z-index: 10;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .menu_barra.ativo nav {
+      display: block;
+      width: 53vw;
+      height: 100vh;
+  }
+
+  .menu_barra.ativo .hamburger {
+      position: absolute;
+      left: 5px;
+      top: 33px;
+  }
+
+  .menu_barra.ativo .hamburger .barra1 {
+      transform: rotate(45deg) translate(7px, 7px);
+  }
+
+  .menu_barra.ativo .hamburger .barra2 {
+      opacity: 0;
+  }
+
+  .menu_barra.ativo .hamburger .barra3 {
+      transform: rotate(-45deg) translate(8px, -9px);
+  }
+
+  .menu_barra.ativo nav ul {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .menu_barra.ativo nav ul a{
+      transition-duration: 0.5s;
+      font-size: 16px;
+      line-height: 16px;
+      display: block;
+  }
+  
+  .clicar {
+      position: absolute;
+      right: 35%;
+      }
+  .escurecer {
+      background: rgba(0, 0, 0, 0.25);
+      width: 100%;
+      height: 100%;
+      
+      }
+}

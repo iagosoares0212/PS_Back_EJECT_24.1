@@ -1,6 +1,11 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
 html, body {
     width: 100%;
     margin: 0;
+    box-sizing: border-box;
+    padding: 0;
    
     
 }
@@ -8,9 +13,8 @@ html, body {
 main {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+    padding: 0; 
+    
 }
 
 .last-news {
@@ -34,7 +38,7 @@ main {
     margin-top: 20px;
     font-size: 16px;
     line-height: 20px;
-    width: 350px;
+    text-align: center;
     font-weight: 400;
 }
 .search-bar {
@@ -44,6 +48,7 @@ main {
     border-radius:15px;
     align-self: flex-end;
     margin-top: 50px;
+    margin-right: 9.2%;
     
 }
 .search-bar input {
@@ -58,32 +63,41 @@ main {
 .search-bar img {
     margin-top: 7px;
 }
-.course-area {
-    margin-top: 20px;
+.course-area {  
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 1440px;
-    justify-content: space-between;
+    justify-content: space-between;    
+    width: 100%;
+    padding-right: 9.2%;
+    padding-left: 9.2%;
+    box-sizing: border-box;   
+    
 }
-.course {
-    width: 467px;
+.course {   
     height: 510px;
     color: #262626;
-    text-align:justify;
+    text-align: justify;
     margin-top: 50px;
+    box-sizing: border-box;
+    width: 460px;
     
+    
+    
+      
 }
 .course .link-area {
     color: #262626;
     text-decoration: none;
     text-align: justify;
-    width: inherit;
+    
 }
 .course .course-img {
-    width: 100%;
+    width: 460px;
+    height: auto;
     border-radius: 20px;
     height: 270px;
+    object-fit: cover;
 }
 .course h3 {
      
@@ -98,12 +112,13 @@ main {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     
 }
 .date-more {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .date-more .read-more {
     text-decoration: none;
@@ -113,7 +128,8 @@ main {
     line-height: 20px;
 }
 .heart-img {
-    margin-right: 30px;
+    margin-right: 10px;
+    height: 15px;
 }
 .search-more {
     margin-top: 100px;
@@ -136,7 +152,10 @@ footer {
     padding: 20px;
     width: 100%;
     bottom: 0;
-    left: 0;  
+    left: 0; 
+    padding-right: 9.2%;
+    padding-left: 9.2%;
+     
 }
 .footer-area {
     margin-top: 25px;
@@ -164,4 +183,80 @@ footer {
     
 }
 
+@media screen and (max-width: 550px) {
+    .last-news {
+        padding: 20px;
+    }
+    .last-news h1 {
+        font-size: 26px;
+        line-height: 31px;
+        font-weight: 600;
+    }
+    .last-news p {
+        font-size: 12px;
+        line-height: 17px;
+        text-align: center;
+        font-weight: 400;
 
+    }
+    .link-area h3 {
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 600;
+        color: #262626;
+        
+    }
+    .link-area p {
+        font-size: 12px;
+        line-height: 17px;
+        text-align: justify;
+        font-weight: 400;
+        color: #787878;
+    }
+    
+    .course .course-img {
+        width: 100%;
+    }
+
+    footer {
+        padding-right: 9.2%;
+        padding-left: 9.2%;
+    }
+    .information-area {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .contact-areac {
+        margin-right:15px ;
+
+    }
+  
+    .contact-area h6 {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 700;
+        
+    }
+    .contact-area p {
+        font-size: 8px;
+        line-height: 10px;
+        font-weight: 400;
+
+    }
+    .contact-area img {
+       width: 10px;
+        margin-top: 25px;
+    }
+}
+@media screen and (max-width:1085px) {
+    .course-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .course .course-img {
+        width: 100%;
+    }
+}

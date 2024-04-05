@@ -1,0 +1,144 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-left: 5.2%;
+    padding-right: 5.2%;
+}
+.fale-conosco,
+.map-area {
+    flex: 1;
+}
+.fale-conosco {
+    display: flex;
+    flex-direction: column;
+    margin-right: 70px;
+    
+}
+.fale-conosco h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #262626;
+    margin-bottom: 15px;
+}
+.fale-conosco p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #95A1BB;
+
+}
+.fale-conosco form {
+    display: flex;
+    flex-direction: column;
+}
+input[type="text"],
+input[type="email"] {
+    border: solid 1px #CAD1E1;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #95A1BB;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 5px;
+}
+input[type="submit"] {
+    background-color: #F97B22;
+    width: 90px;
+    height: 40px;
+    color: #FFF;
+    border-radius: 90px;
+    border: 0;
+    margin-top: 15px;
+}
+form .assunto-form,
+form .mensagem-form {
+    width: 460px;
+    height: 40px;
+}
+form span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 460px;
+    
+
+}
+
+.map-area iframe {
+    width: 640px;
+    height: 350px;
+    
+}
+.map-area p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #262626;
+}
+
+@media screen and (max-width:1175px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 5.2%;
+        padding-right: 5.2%;
+    } 
+    .fale-conosco {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        width: 300px;
+        margin-left: 70px;
+    }
+    .fale-conosco h1 {
+        font-size: 26px;
+        line-height: 31px;
+        font-weight: 600;
+    }
+    .fale-conosco p {
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 400;
+    }
+    form input,
+    .assunto-form,
+    .mensagem-form,
+    span input {
+        width: inherit;
+    }
+    form span {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+    }
+    form .assunto-form,
+    form .mensagem-form {
+    width: 300px;
+    height: 40px;
+}
+
+    .map-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .map-area iframe {
+        width: 100%;
+        margin-top: 50px;
+        border-radius: 30px;
+        
+    }
+
+}
