@@ -7,11 +7,141 @@
     position: absolute;
     top: 1068px;
     margin: 5.2%;
-    border: 1px solid red;
+    width: 93.5%;
 }
 h2 {
     font-family: DM sans;
     font-size: 48px;
     font-weight: 700;
     line-height: 41px;
-}
+    margin-left: 1%;
+} 
+  h3 {
+    text-align: center;
+    margin: 1em 0;
+    font-family: sans-serif;
+  }
+  h4 {
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .nota_texto {
+    
+    font-size: 12px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    line-height: 14.63px;
+    margin-left: 1%; 
+  }
+  .estrela_comp {
+    margin-left: 5%;
+  }
+  .estrela {
+    margin-left: 30%;
+  }
+  .estrela_enfermagem {
+    margin-left: 37%;
+  }
+  .descriçao_vaga {
+    font-family: Montserrat, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 2%;
+    color: black;
+  }
+  .texto_vaga {
+    font-family: DM sans, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.23px;
+    margin-top: 2%;
+    color: #787878;
+  }
+  
+  .preço {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    margin-top: 16%;
+  }
+  .preço2 {
+    font-family: Montserrat, sans-serif;
+    font-size: 10px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+  .button_compra {
+    float: right;
+    background: #F97B22;
+    color: #fff;
+    font-weight: 700;
+    width: 107px;
+    height: 40px;
+    border: transparent;
+    border-radius: 90px;
+  }
+  .carrossel {
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .galeria-wrapper {
+    overflow-x: auto;
+  }
+  
+  .left,
+  .right {
+    position: absolute;
+    top: -2%;
+    right: 0;
+    left: auto;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50px;
+    background: transparent;
+  }
+  
+  .left:hover,
+  .right:hover {
+    border: 1px solid black;
+    border-radius: 50px;
+  }
+  
+  .left {
+    position: absolute;
+    top: -2%;
+    right: 2.1%;
+    left: auto;
+    border-radius: 50px;
+    background: transparent;
+  }
+  
+  .galeria {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+  }
+  
+  .item {
+    width: 355px;
+    height: 500px;
+    flex-shrink: 0;
+    transition: all 600ms ease-in-out;
+    opacity: 0.5;
+  }
+  .current-item {
+    opacity: 1;
+  }
+  .galeria-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .galeria-wrapper {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }

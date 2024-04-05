@@ -18,7 +18,7 @@
     <div class="container"> <!--INICIO CONTAINER-->
         <header><!--INICIO do header-->
             <div class="img_logo">
-            <a href="../" class="logo-mani-cursos"><img src="{% static 'IMG/mani logopsd cópia 2.png' %}" alt="botão-logo-mani-cursos"></a>
+            <a href="{% url 'home:index' %}" class="logo-mani-cursos"><img src="{% static 'IMG/mani logo.png' %}" alt="botão-logo-mani-cursos"></a>
             <img class="linha-divisoria" src="{% static 'IMG/Line 2.svg' %}" alt="linha-divisoria">
             <div class="menu_barra">
                     <div class="hamburger">
@@ -40,25 +40,22 @@
             </div>
         </header>
     </div><!--FIM do header-->
-    <script src="{% static 'JAVASCRIPT/navbar.js' %}">
-
-    </script>
-    
-    
-        <main>
-            <div class="last-news">
-                <h1>Últimas notícias</h1>
-                <p>Est recusandae fugit qui quia voluptas ut ratione
+    <script src="{% static 'JAVASCRIPT/navbar.js' %}"></script>
+        
+    <main>
+        <div class="last-news">
+            <h1>Últimas notícias</h1>
+            <p>Est recusandae fugit qui quia voluptas ut ratione
                     iusto aut accusamus voluptatem.</p>
-            </div> 
-            <div class="search-bar">
-                <form method="GET" action="{% url 'blog:blogsearch' %}">
-                    <input type="text" placeholder="Buscar" id="search" name="q"/>
-                    <img src="{% static 'IMG/lupa.svg' %}" alt="imagem-lupa"/>
-                </form>
-            </div>
-            <div class="course-area">
-                {% for post in posts %}
+        </div> 
+        <div class="search-bar">
+            <form method="GET" action="{% url 'blog:blogsearch' %}">
+                <input type="text" placeholder="Buscar" id="search" name="q"/>
+                <img src="{% static 'IMG/lupa.svg' %}" alt="imagem-lupa"/>
+            </form>
+        </div>
+        <div class="course-area">
+            {% for post in posts %}
                 <div class="course" id="{{forloop.counter}}">
                     <a class="link-area" href="">
                         <a class="link-area" href="{% url 'blog:post' post.id %}">
@@ -70,24 +67,18 @@
                         </a>
                     </a>
                 </div>
-                {% endfor %}
-            </div>
+            {% endfor %}
+        </div>
             {% if search != '' %}
-            <a class="search-more" href="{% url 'blog:blogsearchmais' num_posts %}?q={{search}}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
+                <a class="search-more" href="{% url 'blog:blogsearchmais' num_posts %}?q={{search}}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
             {% else %}
-            <a class="search-more" href="{% url 'blog:blogcarregarmais' num_posts %}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
+                <a class="search-more" href="{% url 'blog:blogcarregarmais' num_posts %}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
             {% endif %}
-        
-                <!-- 
-            <script>
-                document.getElementById("carregar-mais").setAttribute("href", "../blog/carregar-mais/"+counter+"#"+counter);
-            </script>
-        -->
-        </main>
+    </main>
     
     <footer>
         <div class="footer-area">
-            <img class="footer-logo" src="../IMG/mani logopsd cópia 2 (1).png" alt="logo-footer"/>
+            <img class="footer-logo" src="{% static 'IMG/mani logo.png' %}" alt="logo-footer"/>
             <div class="information-area">
                 <div class="contact-area">
                     <h6>Entre em contato</h6>
