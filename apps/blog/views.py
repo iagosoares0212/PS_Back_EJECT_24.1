@@ -9,14 +9,33 @@ def blog(request: HttpRequest, num_posts: int = -1):
     # são exibidos apenas os posts públicos, em ordenados por número de acessos
     num_posts += 2
     posts = Post.objects.all().filter(public=True).order_by('-data_publicacao')
-    return render(request, 'blog.html', {'posts': posts[:num_posts+1], 'num_posts': num_posts, 'search': ''})
+    carregarmais = True if num_posts+1 < len(posts) else False
+
+    context = {
+        'posts': posts[:num_posts+1],
+        'num_posts': num_posts,
+        'search': '',
+        'carregarmais': carregarmais
+    }
+
+    return render(request, 'blog.html', context)
 
 def blog_search(request: HttpRequest, num_posts: int = -1):
     # view do blog com pesquisa, extrai os parametros da pesquisa através do GET e ordena os posts de acordo com a relevância
+    # o parametro carregarmais indica se devemos criar o botão para carregar mais posts
     num_posts += 2
     posts = Post.objects.all().filter(public=True)
     posts = order_search(posts, request.GET['q'])
-    return render(request, 'blog.html', {'posts': posts[:num_posts+1], 'num_posts': num_posts, 'search': request.GET['q']})
+    carregarmais = True if num_posts+1 < len(posts) else False
+    
+    context = {
+        'posts': posts[:num_posts+1],
+        'num_posts': num_posts,
+        'search': request.GET['q'],
+        'carregarmais': carregarmais
+    }
+
+    return render(request, 'blog.html', context)
 
 def order_search(posts, search):
     # função que ordena os posts de acordo com a relevância da pesquisa

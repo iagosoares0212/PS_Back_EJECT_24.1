@@ -14,33 +14,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container"> <!--INICIO CONTAINER-->
-        <header><!--INICIO do header-->
-            <div class="img_logo">
-            <a href="{% url 'home:index' %}" class="logo-mani-cursos"><img src="{% static 'IMG/mani logo.png' %}" alt="botão-logo-mani-cursos"></a>
-            <img class="linha-divisoria" src="{% static 'IMG/Line 2.svg' %}" alt="linha-divisoria">
-            <div class="menu_barra">
-                    <div class="hamburger">
-                        <div class="barra1"></div>
-                        <div class="barra2"></div>
-                        <div class="barra3"></div>
-                    </div>
-                    
-                    <nav>
-                        <ul>
-                            <li><a href="{% url 'home:index' %}">HOME</a></li>
-                            <li><a href="sobre">SOBRE</a></li>
-                            <li><a href="cursos">CURSOS</a></li>
-                            <li><a href="{% url 'blog:blog' %}">BLOG</a></li>
-                            <li><a href="contato">CONTATO</a></li>
-                        </ul>
-                    </nav>
+<body><div class="container"> <!--INICIO CONTAINER-->
+    <header><!--INICIO do header-->
+        <div class="img_logo">
+            <img class="clicar" src="{% static 'IMG/mani logo.png' %}" href="{% url 'home:index' %}" alt="Mani Cursos">
+            <img class="linha_topo" src="{% static 'IMG/Line 2.svg' %}" alt="barra de navegação">
+        <div class="menu_barra">
+                <div class="hamburger">
+                    <div class="barra1"></div>
+                    <div class="barra2"></div>
+                    <div class="barra3"></div>
+                </div>
                 
-            </div>
-        </header>
-    </div><!--FIM do header-->
-    <script src="{% static 'JAVASCRIPT/navbar.js' %}"></script>
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'home:index' %}">HOME</a></li>
+                        <li><a href="sobre">SOBRE</a></li>
+                        <li><a href="cursos">CURSOS</a></li>
+                        <li><a href="{% url 'blog:blog' %}">BLOG</a></li>
+                        <li><a href="{% url 'contato:contato' %}">CONTATO</a></li>
+                    </ul>
+                </nav>
+            
+        </div>
+    </header>
+</div><!--FIM do header-->
+<script src="{% static 'JAVASCRIPT/navbar.js' %}"></script>
         
     <main>
         <div class="last-news">
@@ -69,11 +68,18 @@
                 </div>
             {% endfor %}
         </div>
-            {% if search != '' %}
-                <a class="search-more" href="{% url 'blog:blogsearchmais' num_posts %}?q={{search}}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
-            {% else %}
-                <a class="search-more" href="{% url 'blog:blogcarregarmais' num_posts %}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
+        {% if posts|length == 0 %}
+            <!--Assume que a unica possibilidade de não haver posts para mostrar é com uma busca -->
+            <h1>Não encontramos nenhum post relacionado à "{{search}}"</h1>
+        {% else %}
+            {% if carregarmais == True %}
+                {% if search != '' %}
+                        <a class="search-more" href="{% url 'blog:blogsearchmais' num_posts %}?q={{search}}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
+                {% else %}
+                        <a class="search-more" href="{% url 'blog:blogcarregarmais' num_posts %}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
+                {% endif %}
             {% endif %}
+        {% endif %}
     </main>
     
     <footer>
