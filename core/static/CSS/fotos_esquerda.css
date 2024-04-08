@@ -6,8 +6,120 @@
 .fotos_esquerda {
     background: url(../IMG/fotos\ esquerda.svg) no-repeat;
     position: absolute;
-    width: 530px;
+    width: 45%;
     height: 1000px;
     right: 0.5px;
     top: 1px;
+}
+.container_esquerda {
+    display: none;
+}
+@media (max-width:1145px) {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .fotos_esquerda {
+    position: absolute;
+    width: 30%;
+    height: 1000px;
+    right: 0.5px;
+    top: 1px;
+  }
+}
+@media screen and (max-width:850px) {
+    .fotos_esquerda {
+        background: none;
+        
+    }
+    h6 {
+        text-align: center;
+        margin: 1em 0;
+        font-family: sans-serif;
+      }
+      
+      .container_esquerda {
+        display: flex;
+        position: absolute;
+        top: 700px;
+        right: 0%;
+       
+        width: 100vw;
+        margin-top: 5;
+      }
+      
+      .gallery_wrapper_esquerda {
+        overflow-x: auto;
+      }
+      
+      .arrow_left_esquerda,
+      .arrow_right_esquerda {
+        position: absolute;
+        top: 45%;
+        right: auto;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        border: none;
+        border-radius: 50px;
+        background: #F97B22;
+        z-index: 9;
+      }
+      
+      .arrow_left_esquerda:hover,
+      .arrow_right_esquerda:hover {
+        border: 1px solid black;
+        border-radius: 50px;
+      }
+      
+      .arrow_right_esquerda {
+        position: absolute;
+        top: 45%;
+        right: 0;
+        left: auto;
+        border-radius: 50px;
+        background: transparent;
+        background: #F97B22;
+        z-index: 9;
+      }
+      
+      .gallery_esquerda {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 15px;
+      }
+      
+      .item_esquerda {
+        width: 40%;
+        height: 100%;
+        flex-shrink: 0;
+        transition: all 600ms ease-in-out;
+        border-radius: 35px;
+        opacity: 0.5;
+      }
+      
+      .current_item_esquerda {
+        opacity: 1;
+      }
+      .gallery_wrapper_esquerda::-webkit-scrollbar {
+        display: none;
+      }
+      .gallery_wrapper_esquerda {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      
+}
+@media screen and (max-width:360px){
+    .container_esquerda {
+        display: flex;
+        position: absolute;
+        top: 360px;
+        right: 0%;
+       
+        width: 100vw;
+        margin-top: 5;
+      }
 }

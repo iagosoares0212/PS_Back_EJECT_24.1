@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,21 +10,284 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheeat">
-    <link rel="stylesheet" href="../CSS/cursos.css"/>
-    <link rel="stylesheet" href="../CSS/navbar.css"/>
-    <link rel="stylesheet" href="../CSS/footer.css"/>
+    <link rel="stylesheet" href="{% static 'CSS/cursos.css' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/footer.css' %}"/>
     <title>Cursos</title>
 </head>
 <body>
-    <div class="box">
-        <img src="../IMG/imageCursos/PH 001.jpg"/>
-        <div class="overlay"></div>
-        <div class="img-text">
-            <div class="text1">Bem vindo a <span>educação</span> Mani de qualidade </div>
-            <div class="text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer.</div>
+    <div class="container"> 
+        <header>
+            <div class="img_logo">
+                <img class="clicar" src="{% static 'IMG/mani logo.png'%}" alt="Mani Cursos">
+                <img class="linha_topo" src="{% static 'IMG/Line 2.svg'%}" alt="barra de navegação">
+            <div class="menu_barra">
+                    <div class="hamburger">
+                        <div class="barra1"></div>
+                        <div class="barra2"></div>
+                        <div class="barra3"></div>
+                    </div>
+                    
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'home:index' %}">HOME</a></li>
+                            <li><a href="{% url 'sobre:sobre' %}">SOBRE</a></li>
+                            <li><a href="{% url 'cursos:cursos' %}">CURSOS</a></li>
+                            <li><a href="{% url 'blog:blog' %}">BLOG</a></li>
+                            <li><a href="">CONTATO</a></li>
+                        </ul>
+                    </nav>
+                
+            </div>
+        </header>
+    </div>
+        
+        
+
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1"/>
+            <input type="radio" name="radio-btn" id="radio2"/>
+            <input type="radio" name="radio-btn" id="radio3"/>
+            <input type="radio" name="radio-btn" id="radio4"/>
+
+            <div class="slide first">
+                <img src="{% static 'IMG/imageCursos/PH 001.jpg' %}" alt="img1"/> 
+                <div class="overlay"></div> 
+                <div class="img-text">
+                    <div class="text1">Bem vindo a <span>educação</span> Mani de qualidade </div>
+                    <div class="text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget cras integer.</div>
+                </div>              
+            </div>
+            <div class="slide">
+                <img src="{% static 'IMG/imageCursos/PH 002.jpg' %}" alt="img2"/>                
+            </div>
+            <div class="slide">
+                <img src="{% static 'IMG/imageCursos/PH HIST 002.jpg' %}" alt="img3"/>
+            </div>
+            <div class="slide">
+                <img src="{% static 'IMG/imageCursos/PH VAL 003.jpg' %}" alt="img4"/>
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+        </div>
+
+        <div class="manual-navigation">
+           <label for="radio1" class="manual-btn"></label>
+           <label for="radio2" class="manual-btn"></label>
+           <label for="radio3" class="manual-btn"></label>
+           <label for="radio4" class="manual-btn"></label>
         </div>
     </div>
     
-    <script src="../JAVASCRIPT/cursos.js"></script>
+
+    <section class="pop-course">
+        <h1>Cursos mais populares</h1>
+        <div class="wrapper"> 
+                <button id="left" class="left-btn">🡨</button>
+                <button id="right" class="right-btn">🡪</button>
+            <ul class="carrossel">
+                {% for curso in cursos %}
+                <li class="card">
+                    <img src="{{ curso.imagem.url }}"/>
+                    <span class="tittle-course">
+                        <h2>{{ curso.titulo }}</h2>
+                        <span class="nota">
+                            <img src="{% static 'IMG/imageCursos/star.svg' %}" alt="estrela"/>
+                            <p>{{ curso.avaliacoes }}</p>
+
+                        </span>
+                    </span>
+                    <h4>{{ curso.tipo }}</h4>
+                    <p>{{ curso.descricao }}</p>
+                    <div class="more">
+                        <span class="price">
+                            <h5>{{ curso.numero_parcelas }}x de R${{ curso.preco_parcela }}</h5>
+                            <h6>R${{ curso.preco_vista }}</h6>
+                        </span>
+                        <a class="card-btn" href="">VER MAIS</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <section class="all-course">
+            <h1>Todos os cursos</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar"/>
+                <img src="{% static 'IMG/lupa.svg' %}" alt="imagem-lupa"/>
+            </div>
+            <h3>Ciências humanas</h3>
+            <div class="wrapper-second">
+                <button id="left2" class="left-btn2">🡨</button>
+                <button id="right2" class="right-btn2">🡪</button>
+                <ul class="carrossel-second">
+                    {% for curso in cursos_ciencias_humanas %}
+                    <li class="card-second">
+                        <img src="{{ curso.imagem.url }}"/>
+                        <span class="tittle-course">
+                            <h2>{{ curso.titulo }}</h2> 
+                        </span>
+                        <h4>{{ curso.tipo }}</h4>
+                        <span class="details">
+                            <a class="other-details" href="">Mais detalhes</a>
+                            <span class="nota">
+                                <img src="{% static 'IMG/imageCursos/star.svg' %}" alt="estrela"/>
+                                <p>{{ curso.avaliacoes }}</p>
+                            </span>
+                        </span>
+                        
+                        <div class="more">
+                            <span class="price">
+                                <h5>{{ curso.numero_parcelas }}x de R${{ curso.preco_parcela }}</h5>
+                                <h6>R${{ curso.preco_vista }}</h6>
+                            </span>
+                            <a class="card-btn" href="">VER MAIS</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+            <h3>Ciências exatas</h3>
+            <div class="wrapper-third">
+                <button id="left3" class="btn-test1">🡨</button>
+                <button id="right3" class="btn-test2">🡪</button>
+                <ul class="carrossel-third">
+                    {% for curso in cursos_ciencias_exatas %}
+                        <li class="card-third">
+                            <img src="{{ curso.imagem.url }}"/>
+                            <span class="tittle-course">
+                                <h2>{{ curso.titulo }}</h2> 
+                            </span>
+                            <h4>{{ curso.tipo }}</h4>
+                            <span class="details">
+                                <a class="other-details" href="">Mais detalhes</a>
+                                <span class="nota">
+                                    <img src="{% static 'IMG/imageCursos/star.svg' %}" alt="estrela"/>
+                                    <p>{{ curso.avaliacoes }}</p>
+                                </span>
+                            </span>
+                            
+                            <div class="more">
+                                <span class="price">
+                                    <h5>{{ curso.numero_parcelas }}x de R${{ curso.preco_parcela }}</h5>
+                                    <h6>R${{ curso.preco_vista }}</h6>
+                                </span>
+                                <a class="card-btn" href="">VER MAIS</a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+
+            </div>
+            
+            <h3>Biociências</h3>
+            <div class="wrapper-fourth">
+                <button id="left4" class="left-btn4">🡨</button>
+                <button id="right4" class="right-btn4">🡪</button>
+                <ul class="carrossel-fourth">
+                    {% for curso in cursos_biociencias %}
+                    <li class="card-fourth">
+                        <img src="{{ curso.imagem.url }}"/>
+                        <span class="tittle-course">
+                            <h2>{{ curso.titulo }}</h2> 
+                        </span>
+                        <h4>{{ curso.tipo }}</h4>
+                        <span class="details">
+                            <a class="other-details" href="">Mais detalhes</a>
+                            <span class="nota">
+                                <img src="{% static 'IMG/imageCursos/star.svg' %}" alt="estrela"/>
+                                <p>{{ curso.avaliacoes }}</p>
+                            </span>
+                        </span>
+                        
+                        <div class="more">
+                            <span class="price">
+                                <h5>{{ curso.numero_parcelas }}x de R${{ curso.preco_parcela }}</h5>
+                                <h6>R${{ curso.preco_vista }}</h6>
+                            </span>
+                            <a class="card-btn" href="">VER MAIS</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <a class="load-more" href="">Carregar mais</a>
+            
+       
+        
+    </section>
+
+    <section class="student">
+        <h1>Quem já foi aluno <span>aprova!</span></h1>
+        <div class="wrapper-student">
+            <ul class="carrossel-student">
+                {% for aluno in alunos %}
+                <li class="card-student">
+                    <div class="overlay-student">
+                        <h4>{{ aluno.nome }}</h4>
+                        <h6>{{ aluno.texto1 }}</h6>
+                        <p>{{ aluno.texto2 }}</p>
+                    </div>
+                    <img src="{{ aluno.imagem.url }}" alt="aluno" draggable="false"/>
+                    
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-area">
+            <img class="footer-logo" src="{% static 'IMG/mani logo.png' %}" alt="logo-footer"/>
+            <div class="information-area">
+                <div class="contact-area">
+                    <h6>Entre em contato</h6>
+                    <p>contato@manicursos.com.br</p>
+                    <p>+1-2345-6789</p>
+                    <p>23 Cornelia St, NY 10014, EUA</p>
+                    <a href=""><img src="{% static 'IMG/face.svg' %}" alt="footer-social"/></a>
+                    <a href=""><img src="{% static 'IMG/linkedin.svg' %}" alt="footer-social"/></a>
+                    <a href=""><img src="{% static 'IMG/twitter.svg' %}" alt="footer-social"/></a>
+                    <a href=""><img src="{% static 'IMG/insta.svg' %}" alt="footer-social"/></a>
+                        
+                    
+                </div>
+                <div class="contact-area">
+                    <h6>FAQ</h6>
+                    <p>Auctor volutpat.</p>
+                    <p>Fermentum turpis.</p>
+                    <p>Mi consequat.</p>
+                    <p>Amet venenatis.</p>
+                    <p>Convallis porttitor.</p>
+                </div>
+                <div class="contact-area">
+                    <h6>Central de Ajuda</h6>
+                    <p>Egestas vitae.</p>
+                    <p>Viverra lorem ac.</p>
+                    <p>Eget ac tellus.</p>
+                    <p>Erat nulla.</p>
+                    <p>Vulputate proin.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+
+
+
+    <script src="{% static 'JAVASCRIPT/cursos.js' %}"></script>
+    <script src="{% static 'JAVASCRIPT/navbar.js' %}"></script>
+    
 </body>
 </html>

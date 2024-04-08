@@ -8,4 +8,3 @@ menuInteragir.addEventListener("click", () =>{
     menuBarra.classList.toggle("ativo", mostrar);
     mostrar = !mostrar;
 })
-//testar com display none e block
