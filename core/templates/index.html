@@ -1,0 +1,201 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/headline.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/fotos_esquerda.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/cursos_populares.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/carrossel.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/aluno_aprova' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container"> <!--INICIO CONTAINER-->
+        <header><!--INICIO do header-->
+            <div class="img_logo">
+                <img class="clicar" src="{% static 'IMG/mani logo.png' %}" alt="Mani Cursos">
+                <img class="linha_topo" src="{% static 'IMG/Line 2.svg' %}" alt="barra de navegação">
+            </div class="menu_barra ativo">
+                <div>
+                <div class="hamburger">
+                    <div class="barra1"></div>
+                    <div class="barra2"></div>
+                    <div class="barra3"></div>
+                </div>
+                <nav>
+                    <ul>
+                      <li><a href="{% url 'home:index' %}">HOME</a></li>
+                      <li><a href="{% url 'sobre:sobre' %}">SOBRE</a></li>
+                      <li><a href="{% url 'cursos:cursos' %}">CURSOS</a></li>
+                      <li><a href="{% url 'blog:blog' %}">BLOG</a></li>
+                      <li><a href="">CONTATO</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header><!--FIM do header-->
+        <div class="fotos_esquerda"><!--fotos da esquerda--></div>
+        <div class="headline"> <!--INICIO da headline-->
+            <h1>Bem vindo a educação <span class="underline">Mani</span> de <span class="laranja">qualidade</span> </h1>
+                <div class="headline_text">
+                    <p>Com a <span class="italic">Mani cursos</span> você pode ficar tranquilo, seu futuro está em boas mãos.</p>
+                </div>
+                <div class="headline_interactive">
+                    <button class="headline_button">
+                        <span class="button_circle"></span>
+                        <span class="button_arrow"></span>
+                        <span class="button_text">EXPLORAR CURSOS</span>
+                    </button>
+                        <span class="img_headline1"><img src="{% static 'IMG/headline/icon 001 1.svg' %}" alt=""></span>
+                        <span class="img_headline2"><img src="{% static 'IMG/headline/icon 002 1.svg' %}" alt=""></span>
+                        <span class="img_headline3"><img src="{% static '/IMG/headline/icon 003 1.svg' %}" alt=""></span>
+                        <span class="plus"><span class="Line">+</span></span>
+                        <div class="text_ident">
+                            <p>78.926 ALUNOS ESTUDANDO AGORA</p>
+                        </div>
+                </div>
+        </div> <!--FIMda headline-->
+        <div class="cursos_pop"> <!--INICIO "cursos mais populares"-->
+            <h2>Cursos mais <span class="underline">populares</span> </h2>
+            <div class="carrossel"> <!--carrossel-->
+                <button class="left control" aria-label="Previous image">🡨</button>
+                <button class="right control" aria-label="Next Image">🡪</button>
+                <div class="galeria-wrapper"> <!--galeria_wrapper--> 
+                  <div class="galeria"> <!--galeria-->
+                    <span class="item current-item">
+                      <img src="{% static 'IMG/slider cursos pop/Rectangle 604 (1).svg' %}">
+                      <h4>Engenharia da comp... <img src="{% static 'IMG/slider cursos pop/image 21.svg' %}" alt="nota" class="estrela_comp"><span class="nota_texto">(4,7)</span></h4>
+                      <p class="descriçao_vaga">Superior - 45h semanais - Semipresencial</p>
+                      <p class="texto_vaga">Lorem ipsum dolor sit amet consectetur. Montes ut nascetur arcu in nisi turpis. Ut tempor egestas ornare donec sed. Volutpat nunc diam varius.</p>
+                      <div class="preços_compra">
+                        <div class="preço">
+                          24x de R$ 410,90
+                          <button class="button_compra">Ver mais</button>
+                        </div>
+                        <span class="preço2">ou R$ 8,880 à vista</span>
+                      </div>
+                    </span>
+                    <span class="item current-item">
+                      <img src="{% static 'IMG/slider cursos pop/Rectangle 604.svg' %}" >
+                      <h4>Design Gráfico <img src="{% static 'IMG/slider cursos pop/image 21.svg' %}" alt="nota" class="estrela"><span class="nota_texto">(4,6)</span></h4>
+                      <p class="descriçao_vaga">Técnico - 30h semanais - Online</p>
+                      <p class="texto_vaga">Lorem ipsum dolor sit amet consectetur. Montes ut nascetur arcu in nisi turpis. Ut tempor egestas ornare donec sed. Volutpat nunc diam varius.</p>
+                      <div class="preços_compra">
+                        <div class="preço">
+                          24x de R$ 112,90
+                          <button class="button_compra">Ver mais</button>
+                        </div>
+                        <span class="preço2">ou R$ 2,440 à vista</span>
+                      </div>
+                    </span>
+                    <span class="item current-item">
+                      <img src="{% static 'IMG/slider cursos pop/enfermagem.svg' %}">
+                      <h4>Enfermagem <img src="{% static 'IMG/slider cursos pop/image 21.svg' %}" alt="nota" class="estrela_enfermagem"><span class="nota_texto">(4,4)</span></h4>
+                      <p class="descriçao_vaga">Superior - 45h semanais - Presencial</p>
+                      <p class="texto_vaga">Lorem ipsum dolor sit amet consectetur. Montes ut nascetur arcu in nisi turpis. Ut tempor egestas ornare donec sed. Volutpat nunc diam varius.</p>
+                      <div class="preços_compra">
+                        <div class="preço">
+                          24x de R$ 469,90
+                          <button class="button_compra">Ver mais</button>
+                        </div>
+                        <span class="preço2">ou R$ 10,150 à vista</span>
+                      </div>
+                    </span>
+                    <span class="item current-item">
+                      <img src="{% static 'IMG/slider cursos pop/Rectangle 604 (1).svg' %}">
+                      <h4>Engenharia da comp... <img src="{% static 'IMG/slider cursos pop/image 21.svg' %}" alt="nota" class="estrela_comp"><span class="nota_texto">(4,7)</span></h4>
+                      <p class="descriçao_vaga">Superior - 45h semanais - Semipresencial</p>
+                      <p class="texto_vaga">Lorem ipsum dolor sit amet consectetur. Montes ut nascetur arcu in nisi turpis. Ut tempor egestas ornare donec sed. Volutpat nunc diam varius.</p>
+                      <div class="preços_compra">
+                        <div class="preço">
+                          24x de R$ 410,90
+                          <button class="button_compra">Ver mais</button>
+                        </div>
+                        <span class="preço2">ou R$ 8,880 à vista</span>
+                      </div>
+                    </span>
+                    <span class="item current-item">
+                      <img src="{% static 'IMG/slider cursos pop/Rectangle 604.svg' %}" >
+                      <h4>Design Gráfico <img src="{% static 'IMG/slider cursos pop/image 21.svg' %}" alt="nota" class="estrela"><span class="nota_texto">(4,6)</span></h4>
+                      <p class="descriçao_vaga">Técnico - 30h semanais - Online</p>
+                      <p class="texto_vaga">Lorem ipsum dolor sit amet consectetur. Montes ut nascetur arcu in nisi turpis. Ut tempor egestas ornare donec sed. Volutpat nunc diam varius.</p>
+                      <div class="preços_compra">
+                        <div class="preço">
+                          24x de R$ 112,90
+                          <button class="button_compra">Ver mais</button>
+                        </div>
+                        <span class="preço2">ou R$ 2,440 à vista</span>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>          
+        </div> <!--FIM "cursos mais populares"-->
+        <div><!--inicio nossa historia-->
+            <section id="secao-lado-a-lado1">
+                <div class="slider">
+                    <div class="slides">
+                        <input type="radio" name="radio-bnt" id="radio1">
+                        <input type="radio" name="radio-bnt" id="radio2">
+                        <input type="radio" name="radio-bnt" id="radio3">
+                        <input type="radio" name="radio-bnt" id="radio4">
+                        <input type="radio" name="radio-bnt" id="radio5">
+        
+                        <div class="slide slide-first">
+                            <img src="{% static 'IMG/ft 01.jpg' %}" alt="pessoas a mesa1">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'IMG/ft 02.jpg' %}" alt="pessoas a mesa2">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'IMG/ft 03.jpg' %}" alt="pessoas a mesa3">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'IMG/ft 04.jpg' %}" alt="pessoas a mesa4">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'IMG/ft 05.jpg' %}" alt="pessoas a mesa5">
+                        </div>
+                    </div>
+        
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                        <div class="auto-btn5"></div>
+                    </div>
+        
+                    <div class="manual-navigation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                        <label for="radio5" class="manual-btn"></label>
+                    </div>
+                </div>
+        
+                <div class="texto-slider">
+                    <h1>Nossa <span>História</span></h1>    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                </div>            
+            </section>
+    
+        </div><!--fim nossa historia-->
+        <div> <!--inicio aluno aprova-->
+
+        </div>
+    </div> <!--FIM CONTAINER-->
+    <script src="{% static 'JAVASCRIPT/navbar.js' %}"></script>
+    <script src="{% static 'JAVASCRIPT/carrosel.js' %}"></script>
+    <script src="{% static 'JAVASCRIPT/slider.js' %}"></script>
+</body>
+</html>

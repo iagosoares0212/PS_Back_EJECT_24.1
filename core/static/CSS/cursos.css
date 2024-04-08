@@ -1,0 +1,652 @@
+section:not(:nth-last-child()) {
+    margin-left: 5.2%;
+    margin-right: 5.2%;
+}
+body {
+    background-color: black;
+    box-sizing: border-box;
+}
+/* SLIDER INICIO*/
+
+.slider {
+    top: 200px;
+    margin-left: 5.2%;
+    margin-right: 5.2%;
+    width: 1300px;
+    height: 550px;
+    overflow: hidden;
+    border-radius: 35px;
+}
+.slides {
+    width: 400%;
+    height: 550px;
+    display: flex;
+}
+.slides input {
+    display: none;
+}
+.slide {
+    width: 25%;
+    position: relative;
+    transition: 2s;
+    
+}
+.slide img {
+    width: 100%;
+    
+}
+.manual-navigation {
+    position: absolute;
+    width: 1300px;
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
+    z-index: 2;
+    
+}
+.manual-btn {
+    background-color: #FFF;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.manual-btn:not(:last-child) {
+    margin-right: 20px;
+
+}
+.manual-btn:hover {
+    background-color: #262626;
+}
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+
+
+
+
+
+
+
+/* SLIDER FIM*/
+
+/* CARD INICIO*/
+
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 35px;
+    z-index: 1; 
+    overflow: hidden;
+}
+.img-text {
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    left: 67%;
+    transform: translate(-50%,-50%);
+    color: #FFF;
+    z-index: 2;
+    
+}
+.text1 {
+    font-size: 60px;
+    line-height: 80px;
+    font-weight: 700;
+    font-family: "DM Sans", sans-serif;
+
+
+}
+.text1 span {
+    border-bottom: 3px solid #F97B22;
+}
+.text2 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    
+}
+/* CARD FIM*/
+
+
+/* CARROSEL INICIO*/
+
+.pop-course {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 75px;
+}
+.pop-course h1,
+.all-course h1 {
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: 700;
+    font-family: "DM Sans", sans-serif;
+    margin-bottom: 80px;
+}
+.wrapper {
+    
+    width: 100%;
+    padding-left: 5.2%;
+    padding-right: 5.2%;
+    
+
+}
+.carrossel {
+    transition: transform 0.5s ease; /* Adicione uma transição de transformação */
+}
+.wrapper-second,
+.wrapper-third,
+.wrapper-fourth{
+    width: 100%;
+    padding-left: 5.2%;
+    padding-right: 5.2%;
+    margin-bottom: 60px;
+  
+    
+}
+.wrapper .carrossel {
+    list-style-type: none;
+    display: grid;
+    grid-auto-flow: column;
+    
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 40px;
+    overflow: hidden;
+    
+    
+}
+
+.left-btn {
+    position: absolute;
+    right: 12.5%;
+    top: 840px;
+    transform: translateY(-100%);
+    
+}
+.right-btn {
+    position: absolute;
+    right: 10%;
+    top: 840px;
+    transform: translateY(-100%);
+    
+}
+.left-btn,
+ .right-btn {
+    border: none;
+    background-color: #FFF;
+    padding: 8px;
+    
+
+}
+.left-btn:hover,
+.right-btn:hover {
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.card {
+    width: 350px;
+    
+    
+}
+.card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+.tittle-course {
+    display: flex;
+    justify-content: space-between;
+
+}
+.nota {
+    display: flex;
+    margin: 7px;
+}
+.nota img {
+    margin-right: 5px;
+    width: 14px;
+    height: 14px;
+}
+.nota p {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    color: #262626;
+}
+.card h2 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    color: #262626;
+}
+.card h4 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 7px;
+}
+.card p {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    color: #787878;
+    
+}
+.more {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+.price h5 {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    color: #262626;
+}
+.price h6 {
+    font-size: 10px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    color: #787878;
+}
+.more .card-btn {
+    text-decoration: none;
+    background-color: #F97B22;
+    color: #FFFFFF;
+    padding: 12px;
+    border-radius: 90px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+}
+.more .card-btn:hover {
+    transform: scale(1.1);
+}
+.all-course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+.all-course .search-bar {
+    position: absolute;
+    top: 1420px;
+    left: 1150px;
+    width: 195px;
+    height: 31px;
+    border:solid 1px;
+    border-radius:15px;
+}
+.search-bar input {
+    padding-left: 5px;
+    border: 0;
+    height: 30px;
+    margin-left:3px;
+    float:left;
+    background-color:transparent;
+    outline: none;
+}
+.search-bar img {
+    margin-top: 7px;
+}
+.all-course h3 {
+    align-self: self-start;
+    text-align: left;
+    margin-left: 5.2%;
+    font-size: 27px;
+    line-height: 35px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 50px;
+
+}
+
+.left-btn2,
+.right-btn2 {
+    border: none;
+    background-color: #FFF;
+    padding: 8px;
+
+}
+.left-btn2 {
+    position: absolute;
+    right: 14%;
+    top: 1600px;
+    transform: translateY(-100%);
+
+}
+.right-btn2 {
+    position: absolute;
+    right: 11.5%;
+    top: 1600px;
+    transform: translateY(-100%);
+
+}
+.left-btn2:hover,
+.right-btn2:hover {
+    border: 1px solid #000;
+    border-radius: 50%;
+
+}
+.carrossel-second,
+.carrossel-third,
+.carrossel-fourth {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 4) - 12px);
+    gap: 20px;
+    overflow: hidden;
+}
+.card-second,
+.card-third,
+.card-fourth {
+    width: 259px;
+}
+.card-second img,
+.card-third img,
+.card-fourth img {
+    width: 100%;
+    object-fit: cover;
+    height: 180px;
+    border-radius: 15px 15px 0 0;
+    
+}
+.tittle-course h2 {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 3px;
+}
+.card-second .nota
+.card-third .nota,
+.card-fourth .nota {
+    display: flex;
+    margin: 7px;
+
+}
+.nota img {
+    margin-right: 5px;
+    width: 14px;
+    height: 14px;
+
+}
+.nota p {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    color: #262626;
+
+}
+.card-second h4,
+.card-third h4,
+.card-fourth h4 {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 13px;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.details .other-details {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    color: #787878;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    margin-top: 7px;
+}
+.btn-test1 {
+    position: absolute;
+    right: 14%;
+    top: 2075px;
+    transform: translateY(-100%);
+}
+.btn-test2 {
+    position: absolute;
+    right: 11.5%;
+    top: 2075px;
+    transform: translateY(-100%);
+}
+.btn-test1,
+.btn-test2 {
+    border: none;
+    background-color: #FFF;
+    padding: 8px;
+
+}
+.btn-test1:hover,
+.btn-test2:hover {
+    border: 1px solid #000;
+    border-radius: 50%;
+
+}
+
+
+.left-btn4 {
+    position: absolute;
+    right: 14%;
+    top: 2570px;
+    transform: translateY(-100%);
+}
+.right-btn4 {
+    position: absolute;
+    right: 11.5%;
+    top: 2570px;
+    transform: translateY(-100%);
+}
+.left-btn4,
+.right-btn4 {
+    border: none;
+    background-color: #FFF;
+    padding: 8px;
+
+}
+.left-btn4:hover,
+.right-btn4:hover {
+    border: 1px solid #000;
+    border-radius: 50%;
+
+}
+.load-more {
+    text-decoration: none;
+    width: 20%;
+    height: 40px;
+    border: 1px solid #787878;
+    padding: 12px;
+    border-radius: 90px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+}
+
+.student {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+.student h1 {
+    font-size: 48px;
+    margin-bottom: 50px;
+    line-height: 64px;
+    font-weight: 700;
+    font-family: "DM Sans", sans-serif;
+}
+
+.student span {
+    color: #F97B22;
+}
+.wrapper-student {
+    width: 100%;
+    cursor: grap;
+    margin-bottom: 150px;
+}
+.wrapper-student .carrossel-student {
+    list-style-type: none;
+    display: grid;
+    grid-auto-flow: column;
+    overflow: hidden;
+    gap: 15px;
+    cursor: grab;
+    
+    
+   
+}
+.carrossel-student:active {
+    cursor: grabbing;
+    
+}
+
+
+.card-student {
+    width: 350px;
+    height: 450px;
+    position: relative;
+    
+    
+}
+
+.card-student img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 35px;
+    object-position: bottom ;
+
+}
+
+.overlay-student {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 5%;
+    width: 100%;
+    height: 110px; 
+    background-color: #F97B22; 
+    border-radius: 35px;
+    
+
+}
+.overlay-student h4 {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    color: #FFF;
+    margin-top: 12px;
+    
+
+}
+.overlay-student h6 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+    color: #FFF;
+   
+}
+.overlay-student p {
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+    color: #FFF;
+    
+    margin-top: 12px;
+}
+
+
+
+@media screen and (max-width: 1300px) {
+   
+    .slider {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .wrapper .carrossel {
+        grid-auto-columns: calc(40% - 20px); 
+         
+    }
+    
+    .wrapper-second .carrossel-second,
+    .wrapper-third .carrossel-third,
+    .wrapper-fourth .carrossel-fourth{
+        grid-auto-columns: calc(40% - 20px); 
+        gap: 25px;
+   
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    .card {
+        width: 100%;
+    }
+    
+}
+
+
+@media screen and (max-width: 1075px) {
+    .wrapper .carrossel {
+        grid-auto-columns: calc(50% - 20px); 
+        gap: 25px; 
+    }
+    
+
+}
+@media screen and (max-width: 600px) {
+  
+    .wrapper .carrossel {
+        grid-auto-columns: 100%;
+
+    }
+    .wrapper-second .carrossel-second,
+    .wrapper-third .carrossel-third,
+    .wrapper-fourth .carrossel-fourth {
+        grid-auto-columns: 100%;
+        
+
+        
+    }
+}
+

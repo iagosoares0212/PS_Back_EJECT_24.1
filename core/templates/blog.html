@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/blog.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container"> <!--INICIO CONTAINER-->
+        <header><!--INICIO do header-->
+            <div class="img_logo">
+            <a href="{% url 'home:index' %}" class="logo-mani-cursos"><img src="{% static 'IMG/mani logo.png' %}" alt="botão-logo-mani-cursos"></a>
+            <img class="linha-divisoria" src="{% static 'IMG/Line 2.svg' %}" alt="linha-divisoria">
+            <div class="menu_barra">
+                    <div class="hamburger">
+                        <div class="barra1"></div>
+                        <div class="barra2"></div>
+                        <div class="barra3"></div>
+                    </div>
+                    
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'home:index' %}">HOME</a></li>
+                            <li><a href="{% url 'sobre:sobre' %}">SOBRE</a></li>
+                            <li><a href="{% url 'cursos:cursos' %}">CURSOS</a></li>
+                            <li><a href="{% url 'blog:blog' %}">BLOG</a></li>
+                            <li><a href="">CONTATO</a></li>
+                        </ul>
+                    </nav>
+                
+            </div>
+        </header>
+    </div><!--FIM do header-->
+    <script src="{% static 'JAVASCRIPT/navbar.js' %}"></script>
+        
+    <main>
+        <div class="last-news">
+            <h1>Últimas notícias</h1>
+            <p>Est recusandae fugit qui quia voluptas ut ratione
+                    iusto aut accusamus voluptatem.</p>
+        </div> 
+        <div class="search-bar">
+            <form method="GET" action="{% url 'blog:blogsearch' %}">
+                <input type="text" placeholder="Buscar" id="search" name="q"/>
+                <img src="{% static 'IMG/lupa.svg' %}" alt="imagem-lupa"/>
+            </form>
+        </div>
+        <div class="course-area">
+            {% for post in posts %}
+                <div class="course" id="{{forloop.counter}}">
+                    <a class="link-area" href="">
+                        <a class="link-area" href="{% url 'blog:post' post.id %}">
+                            <img class="course-img" src="{{ post.foto_capa.url }}" alt="course-image"/>
+                            <h3>{{post.titulo}}</h3>
+                            <p>{{post.subtitulo}}</p>
+                            <span><img class="heart-img" src="{% static 'IMG/heart.svg' %}"/>{{ post.data_publicacao }}</span>
+                            <a class="read-more" href="">LEIA MAIS</a>
+                        </a>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+            {% if search != '' %}
+                <a class="search-more" href="{% url 'blog:blogsearchmais' num_posts %}?q={{search}}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
+            {% else %}
+                <a class="search-more" href="{% url 'blog:blogcarregarmais' num_posts %}#{{num_posts}}" id="carregar-mais">Carregar mais</a>
+            {% endif %}
+    </main>
+    
+    <footer>
+        <div class="footer-area">
+            <img class="footer-logo" src="{% static 'IMG/mani logo.png' %}" alt="logo-footer"/>
+            <div class="information-area">
+                <div class="contact-area">
+                    <h6>Entre em contato</h6>
+                    <p>contato@manicursos.com.br</p>
+                    <p>+1-2345-6789</p>
+                    <p>23 Cornelia St, NY 10014, EUA</p>
+                    <a href=""><img src="{% static 'IMG/face.svg' %}" alt="footer-social"/></a>
+                    <a href=""><img src="{% static 'IMG/linkedin.svg' %}" alt="footer-social"/></a>
+                    <a href=""><img src="{% static 'IMG/twitter.svg' %}" alt="footer-social"/></a>
+                    <a href=""><img src="{% static 'IMG/insta.svg' %}" alt="footer-social"/></a>
+                        
+                    
+                </div>
+                <div class="contact-area">
+                    <h6>FAQ</h6>
+                    <p>Auctor volutpat.</p>
+                    <p>Fermentum turpis.</p>
+                    <p>Mi consequat.</p>
+                    <p>Amet venenatis.</p>
+                    <p>Convallis porttitor.</p>
+                </div>
+                <div class="contact-area">
+                    <h6>Central de Ajuda</h6>
+                    <p>Egestas vitae.</p>
+                    <p>Viverra lorem ac.</p>
+                    <p>Eget ac tellus.</p>
+                    <p>Erat nulla.</p>
+                    <p>Vulputate proin.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

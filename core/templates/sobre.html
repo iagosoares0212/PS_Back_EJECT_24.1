@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/sobre.css' %}">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/headline.css">
+    <link rel="stylesheet" href="../CSS/fotos_esquerda.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container"> <!--INICIO CONTAINER-->
+        <header><!--INICIO do header-->
+            <div class="img_logo">
+                <img class="clicar" src="{% static 'IMG/mani logo.png'%}" alt="Mani Cursos">
+                <img class="linha_topo" src="{% static 'IMG/Line 2.svg'%}" alt="barra de navegação">
+            <div class="menu_barra">
+                    <div class="hamburger">
+                        <div class="barra1"></div>
+                        <div class="barra2"></div>
+                        <div class="barra3"></div>
+                    </div>
+                    
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'home:index' %}">HOME</a></li>
+                            <li><a href="{% url 'sobre:sobre' %}">SOBRE</a></li>
+                            <li><a href="{% url 'cursos:cursos' %}">CURSOS</a></li>
+                            <li><a href="{% url 'blog:blog' %}">BLOG</a></li>
+                            <li><a href="">CONTATO</a></li>
+                        </ul>
+                    </nav>
+                
+            </div>
+        </header>
+    </div><!--FIM do header-->
+        <script src="../JAVASCRIPT/navbar.js">
+
+        </script>
+    
+    <main>
+
+        <section id="secoes-lado-a-lado">
+            <section id="secao-lado-a-lado1">
+                <div class="slider">
+                    <div class="slides">
+                        <input type="radio" name="radio-bnt" id="radio1">
+                        <input type="radio" name="radio-bnt" id="radio2">
+                        <input type="radio" name="radio-bnt" id="radio3">
+                        <input type="radio" name="radio-bnt" id="radio4">
+                        <input type="radio" name="radio-bnt" id="radio5">
+        
+                        <div class="slide slide-first">
+                            <img src="{% static 'IMG/ft 01.jpg'%}" alt="pessoas a mesa1">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'IMG/ft 02.jpg'%}"alt="pessoas a mesa2">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'IMG/ft 03.jpg'%}" alt="pessoas a mesa3">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'IMG/ft 04.jpg'%}" alt="pessoas a mesa4">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'IMG/ft 05.jpg'%}" alt="pessoas a mesa5">
+                        </div>
+
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                            <div class="auto-btn5"></div>
+                        </div> 
+
+                    </div>
+        
+                    <div class="manual-navigation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                        <label for="radio5" class="manual-btn"></label>
+                    </div>
+
+                </div>
+
+                
+                <div class="texto-slider">
+                    <h1>Nossa <span>História</span></h1>    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                </div>    
+                        
+            </section>
+
+            <section id="secao-lado-a-lado2">
+                
+                <div class="texto-slider2">
+                    <h1>Nossos <span>Valores</span></h1>    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                </div>
+
+
+                <div class="slider2">
+                    <div class="slides2">
+
+                        <input type="radio" name="radio-btn2" id="radio6">
+                        <input type="radio" name="radio-btn2" id="radio7">
+                        <input type="radio" name="radio-btn2" id="radio8">
+                        <input type="radio" name="radio-btn2" id="radio9">
+                        <input type="radio" name="radio-btn2" id="radio10">
+
+                        <div class="slide2 slide-first2">
+                            <img src="{% static 'IMG/ft 01.jpg'%}" alt="pessoas a mesa1">
+                        </div>
+                        <div class="slide2">
+                            <img src="{% static 'IMG/ft 02.jpg'%}" alt="pessoas a mesa2">
+                        </div>
+                        <div class="slide2">
+                            <img src="{% static 'IMG/ft 03.jpg'%}" alt="pessoas a mesa3">
+                        </div>
+                        <div class="slide2">
+                            <img src="{% static 'IMG/ft 04.jpg'%}" alt="pessoas a mesa4">
+                        </div>
+                        <div class="slide2">
+                            <img src="{% static 'IMG/ft 05.jpg'%}" alt="pessoas a mesa5">
+                        </div>
+
+                        <div class="navigation-auto2">
+                            <div class="auto-btn6"></div>
+                            <div class="auto-btn7"></div>
+                            <div class="auto-btn8"></div>
+                            <div class="auto-btn9"></div>
+                            <div class="auto-btn10"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="manual-navigation2">
+                        <label for="radio6" class="manual-btn2"></label>
+                        <label for="radio7" class="manual-btn2"></label>
+                        <label for="radio8" class="manual-btn2"></label>
+                        <label for="radio9" class="manual-btn2"></label>
+                        <label for="radio10" class="manual-btn2"></label>
+                    </div>
+
+
+                </div>
+
+            </section>
+        </section>
+
+        <section id="secao-melhores-professores">
+            <div>
+                <div class="tit-best-profs">
+                    <h1>Os <span>melhores</span> professores do mercado</h1>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Sapien, est felis, sagittis viverra nulla mattis scelerisque. Eget <br> cras integer.</p>
+                <a href="#secao-nossa-equipe">
+                    <span>NOSSA EQUIPE</span>
+                    <img src="{% static 'IMG/Right arrow.png'%}" alt="seta para direita">
+                </a>
+            </div>
+        </section>
+
+    <div class="mini_carrossel">
+        <div class="mini_carrossel-mobile">
+            <button class="arrow_left_esquerda control_esquerda" aria-label="Previous image">◀</button>
+            <button class="arrow_right_esquerda control_esquerda" aria-label="Next Image">▶</button>
+            <div class="gallery_wrapper_esquerda">
+            <div class="gallery_esquerda">
+                {% for professor in professores %}
+                <img src="{{ sobre.imagem.url }}" alt="professor" class="foto-professor">
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div> 
+        
+   <section id="secao-nossa-equipe">
+            <div id="nossa-equipe-topo">
+                <h1>Nossa Equipe</h1>
+                <p class="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Suspendisse sed scelerisque elit. Sed eget tincidunt augue, nec <br> tempus tellus. Quisque quis felis in felis posuere interdum.</p>
+            </div>
+            <div id="professores">
+                {% for professor in professores %}
+                <div class="professor">
+                    <img src="{{ professor.imagem.url }}" alt="professor-giovani">
+                    <h3>{{professor.nome}}</h3>
+                    <h5>{{professor.formacao}}</h5>
+                    <h5 class="textinho">{{professor.descricao}}. </h5>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="footer-area">
+            <img class="footer-logo" src="{% static 'IMG/mani logo.png'%}" alt="logo-footer"/>
+            <div class="information-area">
+                <div class="contact-area">
+                    <h6>Entre em contato</h6>
+                    <p>contato@manicursos.com.br</p>
+                    <p>+1-2345-6789</p>
+                    <p>23 Cornelia St, NY 10014, EUA</p>
+                    <a href=""><img src="{% static 'IMG/face.svg'%}"alt="footer-social"/></a>
+                    <a href=""><img src="{% static 'IMG/linkedin.svg'%}" alt="footer-social"/></a>
+                    <a href=""><img src="{% static 'IMG/twitter.svg'%}" alt="footer-social"/></a>
+                    <a href=""><img src="{% static 'IMG/insta.svg'%}" alt="footer-social"/></a>
+                        
+                    
+                </div>
+                <div class="contact-area">
+                    <h6>FAQ</h6>
+                    <p>Auctor volutpat.</p>
+                    <p>Fermentum turpis.</p>
+                    <p>Mi consequat.</p>
+                    <p>Amet venenatis.</p>
+                    <p>Convallis porttitor.</p>
+                </div>
+                <div class="contact-area">
+                    <h6>Central de Ajuda</h6>
+                    <p>Egestas vitae.</p>
+                    <p>Viverra lorem ac.</p>
+                    <p>Eget ac tellus.</p>
+                    <p>Erat nulla.</p>
+                    <p>Vulputate proin.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'JAVASCRIPT/sobre.js' %}"></script>
+</body>
+</html>
